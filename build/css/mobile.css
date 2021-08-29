@@ -1,0 +1,12 @@
+.container {
+    flex-direction: column;
+    margin-left: 3rem;
+}
+
+#logo {
+    display: none;
+}
+
+#intro h1 {
+    font-size: 2rem;
+}
