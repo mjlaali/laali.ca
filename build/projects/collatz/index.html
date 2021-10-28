@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collatz</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="section flow-text">
+            <div dir="rtl" class="section">
+                برای استفاده از این وبسایت لطفا به فرمول زیر توجه کنید:
+            </div>
+            
+            <div class="section">
+                \(
+                f(n; a, b, k) = \begin{cases}
+                a \times n + b & \text{if n &equiv; 1 (mod k) }\\
+                \frac{n}{k} & \text{if n &equiv; 0 (mod k)}\\
+                \end{cases}
+                \)
+            </div>
+
+            <div dir="rtl" class="section">
+                همان طور که در فرمول بالا مشخص شده است، برای تعریف هر سری ما نیاز به ۳ پارامتر داریم: 
+                a, b, k.
+                شما می توانید این پارامتر ها را در فرم زیر تعیین کنید. لطفا به برچسب کنار هر پارامتر دقت کنید. 
+                پارامتر 
+                n 
+                تعیین کننده شروع سری می باشد.
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <form id="formula">
+                <div class="row">
+                    <div class="input-field col s3">
+                        <label for="coeff" class="flow-text">a=</label>
+                        <input type="text" name="coeff" id="coeff" value="3" class="flow-text">
+                    </div>
+
+                    <div class="input-field col s3">
+                        <label for="bias" class="flow-text">b=</label>
+                        <input type="text" name="bias" id="bias" value="1" class="flow-text">
+                    </div>
+
+                    <div class="input-field col s3">
+                        <label for="mod" class="flow-text">k=</label>
+                        <input type="text" name="mod" id="mod" value="2" class="flow-text">
+                    </div>
+
+                    <div class="input-field col s3">
+                        <label for="start" class="flow-text">n=</label>
+                        <input type="text" name="start" id="start" value="5" class="flow-text">
+                    </div>
+                    <div dir="rtl" class="text flow-text">
+                        حال که شما پارامترها را مشخص کرده‌اید می توانید با کلیک بر روی دکمه 
+                        "محاسبه سری"
+                         مقادیر سری را ملاحظه کنید.
+                         اعداد سری تا وقتی که تکرار نشده باشند نشان داده می شود. 
+                    </div>
+                    <input type="submit" value="محاسبه سری" id="analyze" class="btn flow-text horizontal col s4 offset-s4">
+                </div>
+            </form>
+        </div>
+        <div class="divider"></div>
+
+        <div class="section" id="seq-container">
+            <h5 dir="rtl" id="repeated-seq" class="flow-text hide right-align green">
+                در انتهای سری تناوب دیده می شود:
+            </h5>
+            <h5 dir="rtl" id="no-repeated-seq" class="flow-text hide right-align red">
+                تناوبی در این سری دیده نمی شود:
+            </h5>
+
+            <br>
+
+            <span id="sequence" class="flow-text text">
+            </span>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
