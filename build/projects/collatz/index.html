@@ -30,7 +30,7 @@
             <div dir="rtl" class="section">
                 برای استفاده از این وبسایت لطفا به فرمول زیر توجه کنید:
             </div>
-            
+
             <div class="section">
                 \(
                 f(n; a, b, k) = \begin{cases}
@@ -41,11 +41,11 @@
             </div>
 
             <div dir="rtl" class="section">
-                همان طور که در فرمول بالا مشخص شده است، برای تعریف هر سری ما نیاز به ۳ پارامتر داریم: 
+                همان طور که در فرمول بالا مشخص شده است، برای تعریف هر سری ما نیاز به ۳ پارامتر داریم:
                 a, b, k.
-                شما می توانید این پارامتر ها را در فرم زیر تعیین کنید. لطفا به برچسب کنار هر پارامتر دقت کنید. 
-                پارامتر 
-                n 
+                شما می توانید این پارامتر ها را در فرم زیر تعیین کنید. لطفا به برچسب کنار هر پارامتر دقت کنید.
+                پارامتر
+                n
                 تعیین کننده شروع سری می باشد.
             </div>
         </div>
@@ -75,12 +75,13 @@
                         <input type="text" name="start" id="start" value="5" class="flow-text">
                     </div>
                     <div dir="rtl" class="text flow-text">
-                        حال که شما پارامترها را مشخص کرده‌اید می توانید با کلیک بر روی دکمه 
+                        حال که شما پارامترها را مشخص کرده‌اید می توانید با کلیک بر روی دکمه
                         "محاسبه سری"
-                         مقادیر سری را ملاحظه کنید.
-                         اعداد سری تا وقتی که تکرار نشده باشند نشان داده می شود. 
+                        مقادیر سری را ملاحظه کنید.
+                        اعداد سری تا وقتی که تکرار نشده باشند نشان داده می شود.
                     </div>
-                    <input type="submit" value="محاسبه سری" id="analyze" class="btn flow-text horizontal col s4 offset-s4">
+                    <input type="submit" value="محاسبه سری" id="analyze"
+                        class="btn flow-text horizontal col s4 offset-s4">
                 </div>
             </form>
         </div>
@@ -98,6 +99,48 @@
 
             <span id="sequence" class="flow-text text">
             </span>
+        </div>
+        <div class="section" id="batch-query">
+            <div dir="rtl" class="text flow-text">
+                شما می توانید بررسی کنید که کدام اعداد سری متناوب تولید می کنند.
+                برای این کار لطفا شروع و انتهای بازه را در زیر مشخص کنید و بر روی
+                "بررسی بازه"
+                کلیک کنید.
+                اعدادی که سری متناوب تولید می کنند به رنگ سبز و اعدادی که تناوبی در ۱۰۰۰ عضو اول سری دیده نشود به رنگ
+                قرمز نمایش داده خواهد شد.
+            </div>
+            <div class="section">
+                <form id="interval">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label dir="rtl" for="start-interval" class="flow-text">شروع بازه</label>
+                            <input type="text" name="start-interval" id="start-interval" value="1" class="flow-text">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <label dir="rtl" for="end-interval" class="flow-text">پایان بازه</label>
+                            <input type="text" name="end-interval" id="end-interval" value="100" class="flow-text">
+                        </div>
+                        <input type="submit" value="بررسی بازه" id="analyze"
+                            class="btn flow-text horizontal col s4 offset-s4">
+                    </div>
+                </form>
+            </div>
+
+            <div class="section" id="results">
+                <table class="centered striped">
+
+                    <head>
+                        <tr>
+                            <th class="center-align">شروع</th>
+                            <th class="center-align">متناوب</th>
+                            <th class="center-align">بزرگترین عدد در سری</th>
+                        </tr>
+                    </head>
+                    <tbody id="periodic-numbers">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
