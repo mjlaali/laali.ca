@@ -13,11 +13,12 @@ no_repeated_seq = document.querySelector("#no-repeated-seq")
 formula.addEventListener("submit", analyze);
 
 function collatz(a, b, c, n){
+    const maxValue = Math.floor(Number.MAX_SAFE_INTEGER / a) - 1;
     const seen = new Set();
     const seq = [];
     let added = true;
 
-    for (let i = 0; i < 1000 && (!added || !seen.has(n)); i++) {
+    for (let i = 0; i < 1000 && (!added || !seen.has(n)) && n < maxValue; i++) {
         if (added){
             seq.push(n);
             seen.add(n);
@@ -40,7 +41,7 @@ function collatz(a, b, c, n){
     }
 
     let repeat;
-    if (seen.has(n)){
+    if (seen.has(n) && n < maxValue){
         repeat = true;
         seq.push(n);
     } else
